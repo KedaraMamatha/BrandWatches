@@ -48,10 +48,10 @@ public class ApplicationConfig {
  public SessionFactory getSessionFactory(DataSource dataSource)	{
 	LocalSessionFactoryBuilder localSessionFactoryBuilder= new LocalSessionFactoryBuilder(dataSource);
 	localSessionFactoryBuilder.addProperties(getProperties());
-	 localSessionFactoryBuilder.addAnnotatedClasses(UsersModel.class);
-	 localSessionFactoryBuilder.addAnnotatedClasses(ProductModel.class);
-	 	localSessionFactoryBuilder.addAnnotatedClasses(CategoryModel.class);
-	 		localSessionFactoryBuilder.addAnnotatedClasses(SupplierModel.class);
+	localSessionFactoryBuilder.addAnnotatedClasses(UsersModel.class);
+	localSessionFactoryBuilder.addAnnotatedClasses(ProductModel.class);
+	localSessionFactoryBuilder.addAnnotatedClasses(CategoryModel.class);
+	localSessionFactoryBuilder.addAnnotatedClasses(SupplierModel.class);
 	return localSessionFactoryBuilder.buildSessionFactory();	
 	}
 	@Autowired

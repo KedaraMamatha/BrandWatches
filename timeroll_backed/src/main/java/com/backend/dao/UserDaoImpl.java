@@ -2,6 +2,8 @@ package com.backend.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +17,14 @@ import com.backend.model.UsersModel;
 @Transactional
 public class UserDaoImpl implements UsersDao {
 	@Autowired
-	private SessionFactory sessionFactory;
-	
+	private SessionFactory sessionFactory;	
+	private static final Logger logger=LoggerFactory.getLogger(UserDaoImpl.class);
 	public void registerUser(UsersModel user) 
 	{
+		logger.info("---------Started-------------");
 		Session session=sessionFactory.getCurrentSession();
 		session.save(user);
 		System.out.println("user saved");
-		
-		//private static final Logger logger=LoggerFactory.getLogger(UserDaoImpl.class);
-//		logger.info("---------Registered User Model is Implements-------------");
-	//logger.info("---------------User Table Created and saved-------------------");	
+	    logger.info("---------------ended-------------------");	
 	}
 }

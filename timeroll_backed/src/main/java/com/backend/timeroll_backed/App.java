@@ -41,13 +41,13 @@ productDao.addProduct(product);
 
 CategoryDao categoryDao=(CategoryDao) annotationConfigApplicationContext.getBean("CategoryDaoImpl");
 CategoryModel category=new CategoryModel();
-category.setCategoryName("Watches");
+category.setCategoryName("Professional");
 categoryDao.addCategory(category);
 
 
 SupplierDao supplierDao=(SupplierDao) annotationConfigApplicationContext.getBean("SupplierDaoImpl");
 SupplierModel supplier=new SupplierModel();
-supplier.setSupplierName("FASTTRACK");
+supplier.setSupplierName("Fossil");
 supplier.setSupplierAddress("Mumbai");
 supplierDao.addSupplier(supplier);
 
