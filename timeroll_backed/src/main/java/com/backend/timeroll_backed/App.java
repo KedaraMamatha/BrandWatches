@@ -6,9 +6,6 @@ import com.backend.configuration.ApplicationConfig;
 
 
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-
 import com.backend.dao.ProductDao;
 import com.backend.dao.UsersDao;
 import com.backend.dao.CategoryDao;
@@ -25,11 +22,15 @@ public class App
     {
        
 AnnotationConfigApplicationContext annotationConfigApplicationContext=new AnnotationConfigApplicationContext(ApplicationConfig.class);
-/*annotationConfigApplicationContext.refresh();*/
+//annotationConfigApplicationContext.refresh();
+annotationConfigApplicationContext.close();
 UsersDao userDao=(UsersDao)annotationConfigApplicationContext.getBean("UserDaoImpl");
 UsersModel user=new UsersModel();
-user.setUsername("Kedara");
-user.setPassword("Mamatha");
+user.setFirstName("Kedara");
+user.setLastName("Mamatha");
+user.setPassword("12345");
+user.setConformPassword("12345");
+user.setEmailId("kmamatha1968@gmail.com");
 userDao.registerUser(user);
 
 ProductDao productDao=(ProductDao)annotationConfigApplicationContext.getBean("ProductDaoImpl");

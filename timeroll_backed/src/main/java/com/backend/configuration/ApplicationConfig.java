@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.backend.model.CategoryModel;
 import com.backend.model.ProductModel;
 import com.backend.model.SupplierModel;
+import com.backend.model.UserRole;
 import com.backend.model.UsersModel;
 
 @Configuration
@@ -49,6 +50,7 @@ public class ApplicationConfig {
 	LocalSessionFactoryBuilder localSessionFactoryBuilder= new LocalSessionFactoryBuilder(dataSource);
 	localSessionFactoryBuilder.addProperties(getProperties());
 	localSessionFactoryBuilder.addAnnotatedClasses(UsersModel.class);
+	localSessionFactoryBuilder.addAnnotatedClass(UserRole.class);
 	localSessionFactoryBuilder.addAnnotatedClasses(ProductModel.class);
 	localSessionFactoryBuilder.addAnnotatedClasses(CategoryModel.class);
 	localSessionFactoryBuilder.addAnnotatedClasses(SupplierModel.class);

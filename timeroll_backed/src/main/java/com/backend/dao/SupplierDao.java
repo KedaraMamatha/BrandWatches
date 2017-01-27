@@ -9,6 +9,6 @@ import com.backend.model.SupplierModel;
 @Repository
 public interface SupplierDao {
 
-	public void addSupplier(SupplierModel supplier);
+	public boolean addSupplier(SupplierModel supplier);
 	
 }

@@ -1,12 +1,33 @@
+<%-- 
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<html>
+<body>
+<form:form commandName="user">
+<table align="center">
+<tr><td>FirstName: <form:input path="firstName"/> </td></tr>
+<tr><td>LastName: <form:password path="lastName"/></td></tr>
+<tr><td>Password: <form:input path="password"/></td></tr>
+<tr><td>ConformPassword: <form:input path="conformPassword"/></td></tr>
+<tr><td>EmailId: <form:input path="emailId"/></td></tr>
+<tr><td>PhoneNumber: <form:input path="phoneNumber"/></td></tr>
+</table>
+<center><input type="submit" value="submit"/></center>
+</form:form>
+</body>
+</html> --%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <html>
 <style>
 body {
     background-image:url("resources/images/7.jpg");
 }
-.form_bg{
+/* .form_bg{
 background-color:;
 color:;
 padding:40px;
@@ -34,9 +55,8 @@ text-align:center;
 }
 .palceholder{
 color:#aaa;
-}
+} */
 </style>
-
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,20 +73,35 @@ color:#aaa;
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="/timerollwatches/">Home</a></li>
-      <li ><a href="#">Products</a></li>
+      <li ><a href="product">Products</a></li>
       <li><a href="aboutus">About Us</a></li>
       <li ><a href="#">Customer Care</a></li>
       <li><a href="contactus ">Contact Us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/timerollwatches/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
-
 <body>
-<form>
+<div align="center">
+<form:form action="registerUser" commandName="user" method="post" >
+<table border="0">
+<tr>
+<td colspan ="2" align="center"><h2>Signup Here</h2></td>
+</tr>
+<tr><td>FirstName: <form:input path="firstName"/> </td></tr>
+<tr><td>LastName: <form:input path="lastName"/></td></tr>
+<tr><td>Password: &nbsp&nbsp<form:password path="password"/></td></tr>
+<tr><td>ConformPassword: <form:password path="conformPassword"/></td></tr>
+<tr><td>EmailId: <form:input path="emailId"/></td></tr>
+<tr><td>PhoneNumber: <form:input path="phoneNumber"/></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" value="register"/></td></tr>
+</table>
+</form:form>
+</div>
+<%-- <form:form  method="post" action="save" commandName="user">
 <center>
  <div class="container">
 <div class="container-fluid" >
@@ -74,38 +109,44 @@ color:#aaa;
 <h2 class="text-center">Signup Here</h2>
 <hr>
   <div class="form-group">
-    <label for="fname">First Name:
-    <input type="text" class="form-control" id="fname" placeholder="Enter your Firstname"></label>
+    <label for="firstName">Firstname:
+    <form:input type="text" path="firstName" class="form-control" required="required" placeholder="Enter your Firstname"/></label>
   </div>
   <div class="form-group">
-    <label for="lname">Last Name:
-    <input type="text" class="form-control" id="lname" placeholder="Enter your lastname"></label>
+    <label for="lastName">Lastname:
+    <form:input type="text" path="lastName" class="form-control" required="required" placeholder="Enter your lastname"/></label>
   </div>
   <div class="form-group">
-    <label for="pwd">Password:
-    <input type="password" class="form-control" id="pwd" placeholder="Enter your password"></label>
+    <label for="password">Password:
+    <form:input type="password" path="password" class="form-control" required="required" placeholder="Enter your password" /></label>
   </div>
   <div class="form-group">
-    <label for="cpwd">Conform Password:
-    <input type="password" class="form-control" id="pwd1" placeholder="conform your password"></label>
+    <label for="conformPassword">Conform Password:
+    <form:input type="password" path="conformPassword" class="form-control"  required="required" placeholder="conform your password"/></label>
   </div>
   <div class="form-group">
-    <label for="fname">Email Id:
-    <input type="email" class="form-control" id="fname" placeholder="Enter your mail id"></label>
+    <label for="emailId">EmailId:
+    <form:input type="email" path="emailId" class="form-control" required="required" placeholder="Enter your mail id"/></label>
   </div>
-<center>  <button type="submit" class="btn btn-default">Submit</button></center>
+   <div class="form-group">
+    <label for="phoneNumber">PhoneNumber:
+    <form:input type="number" path="phoneNumber" class="form-control" required="required" placeholder="Enter phone number"/></label>
+  </div>
+<center> <input type="submit" name="submit" value="register"></center>
 <br><br>
 </div>
 </div>
 </div>
 </center>
-</form>
-</body>
-<center>
+</form:form>
+ --%>
+ </body>
+
+<div align="center">
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" style="background-color: #660000;">
     <div class="container">
     <div class="navbar-text pull-left">
-        <p>© 2016 Mamatha ALL RIGHTS RESERVE </p>
+        <p>© 2016 Mamatha ALL RIGHTS RESERVED </p>
     </div>
     <div class="nav navbar-nav navbar-right">
     <br>
@@ -113,9 +154,8 @@ color:#aaa;
     <a href="https://twitter.com/"><i class="fa fa-twitter fa-2x"></i></a>&nbsp
     <a href="https://www.github.com"><i class="fa fa-github fa-2x"></i></a>&nbsp
     <a href="https://www.youtuub.com"><i class="fa fa-youtube fa-2x"></i></a>&nbsp
-    </div>
-    
+    </div>   
 </div>
 </div>
-</center>
+</div>
 </html>

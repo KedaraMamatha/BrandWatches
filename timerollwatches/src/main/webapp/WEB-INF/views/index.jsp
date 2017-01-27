@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
  <style>
   .carousel-inner > .item > img,
@@ -29,13 +27,13 @@
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="/timerollwatches/">Home</a></li>
-      <li ><a href="#">Products</a></li>
+      <li ><a href="product">Products</a></li>
       <li><a href="aboutus">About Us</a></li>
-      <li ><a href="#">Customer Care</a></li>
+      <li ><a href="#">Customer Services</a></li>
       <li><a href="contactus">Contact Us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/timerollwatches/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
@@ -91,11 +89,11 @@
 <br>
 </body>
 
-<center>
+<div align="center">
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" style="background-color: #660000;">
     <div class="container">
     <div class="navbar-text pull-left">
-        <p>© 2016 Mamatha ALL RIGHTS RESERVE </p>
+        <p>© 2016 Mamatha ALL RIGHTS RESERVED </p>
     </div>
     <div class="nav navbar-nav navbar-right">
     <br>
@@ -104,8 +102,8 @@
     <a href="https://www.github.com"><i class="fa fa-github fa-2x"></i></a>&nbsp
     <a href="https://www.youtuub.com"><i class="fa fa-youtube fa-2x"></i></a>&nbsp
     </div>
-    
+
 </div>
 </div>
-</center>
+</div>
 </html>

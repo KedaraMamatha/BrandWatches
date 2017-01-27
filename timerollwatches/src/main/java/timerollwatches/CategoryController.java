@@ -2,6 +2,8 @@ package timerollwatches;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.backend.dao.CategoryDao;
@@ -22,4 +24,27 @@ public class CategoryController {
 		categoryDao.addCategory(categoryModel);
 		return "login";
 	}
+	@RequestMapping("/category")
+	public String Category(Model model)
+	{
+		CategoryModel category=new CategoryModel();
+		model.addAttribute("category", category);
+		System.out.println("category controller called");
+		return "category";
+	}
+	@RequestMapping("/categoryUser")
+	public String CategoryUser(@ModelAttribute("category")CategoryModel category)
+	{
+		System.out.println("categories inserted");
+		boolean b=categoryDao.addCategory(category);
+		if (b)
+		{
+			return "sucess";
+		} 
+		else
+		{
+			return "login";
+		}
+	}
 }
+ 

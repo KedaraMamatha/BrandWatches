@@ -3,10 +3,33 @@ package timerollwatches;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.backend.dao.UsersDao;
 
 @Controller
 public class HomeController {
-
+	
+	@Autowired
+	UsersDao usersDao;
+	
+	@RequestMapping("/adminhome")
+	public String admin()
+	{
+		System.out.println("i m inside the admin");
+		return "adminhome";
+	}
+	
+	@RequestMapping("/userhome")
+	public String user()
+	{
+		System.out.println("i m inside the user");
+		return "userhome";
+	}
+	@RequestMapping("/logout")
+	public String logout()
+	{
+		System.out.println("Logout Controller Called");
+		return "logout";
+	}
 	@RequestMapping("/")
 	public String index()
 	{
@@ -19,12 +42,7 @@ public class HomeController {
 	  System.out.println("login controller called");
 	  return "login";
 	}
-	@RequestMapping("/register")
-	public String register()
-	{
-		System.out.println("register controller called");
-		return "register";
-	}
+	
 	@RequestMapping("/aboutus")
 	public String aboutus()
 	{

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>     
 <html>
 <style>
 body {
@@ -48,19 +48,40 @@ text-align:center;
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="/timerollwatches/">Home</a></li>
-      <li ><a href="#">Products</a></li>
+      <li ><a href="product">Products</a></li>
       <li><a href="aboutus">About Us</a></li>
       <li ><a href="#">Customer Care</a></li>
       <li><a href="contactus">Contact Us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/timerollwatches/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
 
 <body>
+<form name='f' action="<c:url value='j_spring_security_check'/>" method='POST' >
+      <table border="1" align="center">
+         <tr align="center">
+           <td style="font-size: 20px">Enter EmailId:</td> <td><input type='text'
+            name='j_emailId' style="width:300px;height: 40px" 
+            placeholder="Email Required"  required="required"/></td><td><br></br></td>
+         </tr>
+         <tr><td><br></br></td></tr>
+         <tr align="center">
+           <td style="font-size: 20px">Enter Password:</td> <td>
+           <input type='password' name='j_password' style="width: 300px;height: 40px" 
+           placeholder="Password Required" required="required"/></td><td><br></br></td>
+         </tr>
+          <tr><td><br></br></td></tr>
+         <tr>
+            <td><input name="submit" type="submit" value="submit" /></td>
+         </tr>
+      </table>
+  </form>
+ 
+<!-- 
 <form>
  <div class="container">
 <div class="container-fluid" >
@@ -68,30 +89,29 @@ text-align:center;
 <h2 class="text-center">Login Here </h2>
 <hr>
   <div class="form-group">
-    <label for="email">Email address:
-    <input type="email" class="form-control" id="email" placeholder="Enter your mail id"></label>
+    <label for="email">EmailId:
+    <input type="email" class="form-control" id="eid" name="emailId" placeholder="Enter your mail id"></label>
   </div>
   <div class="form-group">
-    <label for="pwd">Password:
-    <input type="password" class="form-control" id="pwd" placeholder="Enter your password">
+    <label for="password">Password:
+    <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter your password">
   </label></div>
   <div class="checkbox">
     <label><input type="checkbox"> Remember me</label>
   </div>
-<center>  <button type="submit" class="btn btn-default">Submit</button></center>
+<align="center">  <input type="submit" value="submit"></align>
 <br>
 </div>
 </div>
 </div>
-</form>
-
+</form> -->
 </body>
 
-<center>
+<div align="center">
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" style="background-color: #660000;">
     <div class="container">
     <div class="navbar-text pull-left">
-        <p>© 2016 Mamatha ALL RIGHTS RESERVE </p>
+        <p>© 2016 Mamatha ALL RIGHTS RESERVED </p>
     </div>
     <div class="nav navbar-nav navbar-right">
     <br>
@@ -102,6 +122,6 @@ text-align:center;
     </div>
     </div>
     </div>
-    </center>
+    </div>
     </html>
   

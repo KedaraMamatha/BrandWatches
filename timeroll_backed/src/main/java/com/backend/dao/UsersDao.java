@@ -11,6 +11,6 @@ import com.backend.model.UsersModel;
 @Repository
 public interface UsersDao {
 	
-public void registerUser(UsersModel user);
+public boolean registerUser(UsersModel user);
 
 }

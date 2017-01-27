@@ -14,17 +14,29 @@ import com.backend.model.ProductModel;
 
 @Repository("ProductDaoImpl")
 @Transactional
-public class ProductDaoImpl implements ProductDao {
+public class  ProductDaoImpl implements ProductDao {
 @Autowired
 	private SessionFactory sessionFactory;
+	
 private static final Logger logger=LoggerFactory.getLogger(ProductDaoImpl.class);
-public void addProduct(ProductModel product)
+public boolean addProduct(ProductModel product)
 {
 	logger.info("--------------started---------------------");
 	Session session=sessionFactory.getCurrentSession();
-	session.save(product);
+	Integer i=(Integer) session.save(product);
 	System.out.println("product saved");
-	logger.info("--------------------ended-----------------------");
+    
+		if (i!=0)
+		{
+			logger.info("--------------------ended-----------------------");
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	
+	
 }
 
 	

@@ -9,6 +9,6 @@ import com.backend.model.ProductModel;
 @Repository
 public interface ProductDao {
 	
-	public void addProduct(ProductModel product);
+	public boolean addProduct(ProductModel product);
 
 }

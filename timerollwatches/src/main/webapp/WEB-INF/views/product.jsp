@@ -1,22 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
-<style>
-.jumbotron{
-background-image:url("resources/images/hero-materials.jpg");
-heigth:100px;
-background repeat :no-repeat;
-}
-
-</style>
 <head>
-<meta charset="utf-8">
+ <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>About Us</title>
+<title>TimeRollWatches</title>
 </head>
 <nav class="navbar navbar-inverse" style="background-color: #660000;">
   <div class="container-fluid">
@@ -37,37 +31,23 @@ background repeat :no-repeat;
   </div>
 </nav>
 <body>
-<div class="container">
-  <div class="jumbotron">
-    <h1>     
-   <center><p>Durable. Beautiful. A watch for life.<br>
-Behind it all, a tradition of visionary research and cutting-edge materials technology.
-Learn more about mastery of materials.</p></center> 
-  </div>
-       
-        <div class="row">
-        <div class="col-sm-4">
-    		Home delivery
-        </div>
-        </div>
-         <div class="row">
-        <div class="col-sm-4">
-    			Daily Discounts
-        </div>
-        </div>
-         <div class="row">
-        <div class="col-sm-4">
-    			Guaranteed products
-        </div>
-        </div>
-</div>
+<form:form action="productUser" commandName="product" method="post" >
+<table border="1">
+<tr>
+<td colspan ="2" align="center"><h2>Add Products</h2></td>
+</tr>
+<tr><td>Product Name: <form:input path="productName"/> </td></tr>
+<tr><td>Price: <form:input path="price"/></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" value="add"/></td></tr>
+</table>
+</form:form>
 
 </body>
 <div align="center">
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" style="background-color: #660000;">
     <div class="container">
     <div class="navbar-text pull-left">
-        <p>Â© 2016 Mamatha ALL RIGHTS RESERVED </p>
+        <p>© 2016 Mamatha ALL RIGHTS RESERVED </p>
     </div>
     <div class="nav navbar-nav navbar-right">
     <br>
@@ -77,6 +57,6 @@ Learn more about mastery of materials.</p></center>
     <a href="https://www.youtuub.com"><i class="fa fa-youtube fa-2x"></i></a>&nbsp
     </div>
     </div>
-</div>
-</div>
+    </div>
+    </div>
 </html>
